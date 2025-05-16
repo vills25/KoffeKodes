@@ -1,0 +1,24 @@
+Calculate the factorial of a number using recursion.
+
+Calculate the sum of all elements in a list using recursion.
+
+Count the number of elements in a list using recursion.
+
+Write a function that checks if a given string is a palindrome (reads the same forwards and backward), ignoring spaces and letter casing.
+
+Implement the FizzBuzz game: Print numbers from 1 to n, but for multiples of 3, print "Fizz," for multiples of 5, print "Buzz," and for multiples of both 3 and 5, print "FizzBuzz."
+
+Implement a function that calculates the sum of the digits of a positive integer.
+
+Write a program that performs operations on lists, such as finding the maximum element, sorting, and removing duplicates.
+
+Implement a function that checks if a given year is a leap year.
+
+Create a simple number guessing game where the program generates a random number, and the user has to guess it.
+
+============================== Linked List =============================
+Python Program to Reverse a Linked List
+Python Program to Reverse First N Elements of a Linked List
+Python Program to Count the Occurrences of Elements in a Linked List
+Python Program Find the Length of Linked List using Recursion
+

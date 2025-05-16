@@ -1,0 +1,80 @@
+List
+
+Given a list of numbers, write a function that takes the list as input and returns a new list containing only the even numbers from the original list.
+
+Create a list of names and then write code to sort the list alphabetically in descending order.
+
+Create a list of numbers from 1 to 10 and then use a list comprehension to create a new list containing the squares of these numbers.
+
+Write a function that takes two lists as input and returns a new list containing elements that are common to both input lists (intersection).
+
+Write a function that takes a list as input and returns a new list with the elements reversed, without using the built-in reverse method.
+
+Write a function that takes two lists as input and returns a new list that contains the elements that are unique to each list (i.e., not common to both lists).
+
+Tuple
+
+Create a function that takes three arguments (name, age, city) and returns them as a tuple. Then, call the function and unpack the tuple into separate variables.
+
+Given two tuples, create a new tuple that combines elements from both tuples without any duplicates.
+
+Create a tuple of your favorite movies, and then write code to print the first two movies and the last two movies in the tuple.
+
+Given three tuples, concatenate them into a single tuple while maintaining their original order.
+
+Write a program that asks the user to enter their name, age, and city, and then packs these values into a tuple and prints it.
+
+Create two tuples, one containing names and the other containing ages. Use the zip function to create a list of tuples where each tuple contains a name and an age.
+
+Dictionary
+
+Write a function that takes a dictionary of student names and their corresponding scores as input and returns the name of the student with the highest score.
+
+Given a list of names, create a dictionary where the keys are the names, and the values are the lengths of the names, using a dictionary comprehension.
+
+Given two dictionaries, merge them into a new dictionary, and in case of overlapping keys, combine their values into a list.
+
+Create a dictionary of products and their prices. Write a program that asks the user for a product name and checks if it exists in the dictionary. If it does, print its price; otherwise, display an error message.
+
+Write a function that takes two dictionaries as input and returns a new dictionary containing key-value pairs that exist in both input dictionaries.
+
+
+
+========================================================================
+
+-	Create a base class Shape with methods to calculate area and perimeter. 
+	Derive classes Circle and Rectangle from it and override the methods.
+	
+-	Implement a function longest_increasing_path(matrix: List[List[int]]) -> int 
+	that finds the length of the longest increasing path in a 2D matrix.
+	Explanation: Dynamic programming is needed to efficiently compute the length of the longest increasing path while avoiding redundant calculations.
+	
+-	Create a function word_break(s: str, word_dict: List[str]) -> bool that determines if a given string can be segmented into a space-separated sequence of one or more dictionary words.
+	Explanation: This task involves dynamic programming to check if the input string can be broken down into valid words from the dictionary.
+
+-	Create a function edit_distance(word1: str, word2: str) -> int that calculates the minimum number of operations (insertion, deletion, or substitution) required to convert one word into another.
+	Explanation: This task involves dynamic programming to find the minimum edit distance between two strings.
+	
+-	Define a function can_partition(nums: List[int], target_sum: int) -> bool that determines whether it is possible to partition a given set of numbers into two subsets such that the sum of elements in both subsets is equal.
+	Explanation: Solving this task involves dynamic programming to check if a subset with a specific sum can be formed.
+	
+-	Create a function longest_palindromic_subsequence(s: str) -> int that finds the length of the longest palindromic subsequence in a given string.
+	Explanation: This task involves dynamic programming to find the longest subsequence that reads the same backward as forward.
+	
+-	Design a function find_longest_chain(pairs: List[Tuple[int, int]]) -> int that finds the length of the longest chain of pairs (a, b) where each pair is (a, b) such that b > a.
+	Explanation: This task challenges you to come up with a greedy algorithm to find the longest chain of pairs.
+
+-	Write a function min_drops(eggs: int, floors: int) -> int that calculates the minimum number of drops needed to find the critical floor from which an egg will break, given a certain number of eggs and floors.
+	Explanation: This task introduces a classic dynamic programming problem involving optimizing egg drops from different floors.
+	
+-	Write a function trap_rainwater(heights: List[int]) -> int that calculates the amount of rainwater that can be trapped between the bars in a given array representing heights.
+	Explanation: This task challenges you to efficiently calculate the trapped rainwater using two pointers or a stack.
+	
+-	Create a custom string class that supports operator overloading for concatenation (+ operator) and replication (* operator). Demonstrate the usage of these overloaded operators.
+	Explanation: This task involves creating a class with customized behavior for string concatenation and replication using operator overloading.
+	
+-	Implement a base class Shape with methods for calculating area and perimeter. Create derived classes such as Circle, Rectangle, and Triangle that inherit from Shape and override the relevant methods. Demonstrate polymorphism by creating instances of these classes and calling the area and perimeter methods.
+	Explanation: This task involves creating a class hierarchy, implementing inheritance, and demonstrating polymorphism through method overriding.
+	
+-	Create a Calculator class with multiple methods for addition, subtraction, multiplication, and division. Implement method overloading to handle different parameter types (int, float, and possibly more). Demonstrate the usage of these overloaded methods.
+	Explanation: This task challenges you to implement method overloading in a class with different parameter types and demonstrate its flexibility.
