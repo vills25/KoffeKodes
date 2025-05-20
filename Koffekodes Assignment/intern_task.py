@@ -51,12 +51,12 @@
 # Implement a function that calculates the sum of the digits of a positive integer.
 # def sum_of_digits(n):
 #     if not isinstance(n, (int, list, tuple)) or any(not isinstance(i, int) or i <= 0 for i in n):
-#         raise ValueError("Input must be a positive integer or a list/tuple of positive integers")
+#         return("invalid input")
 #     if isinstance(n, (list, tuple)):
 #         return sum(sum(int(digit) for digit in str(i)) for i in n)
 #     else:
 #         return sum(int(digit) for digit in str(n))
-
+ 
 # n = 1,2,3,5,6,4
 # print(f"The sum of digits is: {sum_of_digits(n)}")
 
@@ -89,5 +89,36 @@
 # print(leap_year(year))
 
 
-# Create a simple number guessing game where the program generates a random number, and the user has to guess it.
 # Implement the FizzBuzz game: Print numbers from 1 to n, but for multiples of 3, print "Fizz," for multiples of 5, print "Buzz," and for multiples of both 3 and 5, print "FizzBuzz."
+# def fizzbuzzgame(n):
+#     result= []
+#     for i in range(1, 1+n):
+#         if i % 3 == 0 and i % 5 == 0:
+#             result.append("Fizzbuzz")
+#         elif i % 3 == 0:
+#             result.append("Fizz")
+#         elif i % 5 == 0:
+#             result.append("Buzz")  
+#         else:
+#             result.append(str(i)) 
+#     return result
+
+# n = 20
+# print(' '.join(fizzbuzzgame(n)))      
+              
+                 
+# Create a simple number guessing game where the program generates a random number, and the user has to guess it.
+# import random
+
+# def guessing_game():
+#     generatednum = random.randint(1, 100)
+#     n = int(input("Guess a number: "))
+    
+#     if n == generatednum:
+#         print("Correct", generatednum)
+#     else:
+#         print("Incorrect.", generatednum)
+
+# guessing_game()
+
+        

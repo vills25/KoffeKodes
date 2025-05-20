@@ -19,7 +19,7 @@ while True:
 print(get_highest_scorer(student_scores))
 
 
-# Given two dictionaries, merge them into a new dictionary, and in case of overlapping keys, combine their values into a list.
+# Given two dictionaries, merge them into a new dictionary, and in case of overlapping keys, combine their values into a list.?
 
 def merge_dicts(dict1, dict2):
     merge_dict = dict1.copy()
