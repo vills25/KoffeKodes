@@ -1,36 +1,31 @@
 
 class BankAccount:
-    def __init__(self, account_holder, account_type, balance=0):
-        self.account_holder = account_holder
-        self.account_type = account_type
+    def __init__(self, acc_holder,balance=0):
+        self.account_holder = acc_holder
         self.__balance = balance
-
+    # Deposit mate
     def deposit(self, amount):
         if amount > 0:
             self.__balance += amount
             print(f"{amount} deposited successfully!")
         else:
             print("Invalid Amount!")
-
+    #withdraw mate
     def withdraw(self, amount):
         if 0 < amount <= self.__balance:
             self.__balance -= amount
             print(f"{amount} withdrawn successfully!")
         else:
-            print("Insufficient Balance!")
+            print("Insufficient Balance!")  
 
+    #Check bakance mate
     def check_balance(self):
         print(f"Available Balance: {self.__balance}")
-
-    def display_details(self):
-        return f"Account Holder: {self.account_holder}, Type: {self.account_type}, Balance: {self.__balance}"
-
-def main():
-    print("\n= Banking System =")
-    name = input("Enter Account Holder Name: ")
-    acc_type = input("Enter Account Type (Savings/Current): ")
     
-    account = BankAccount(name, acc_type)
+def main():
+    print("\n Banking System ")
+    name = input("Enter Account Holder Name: ")
+    account = BankAccount(name)
 
     while True:
         print("\n1. Deposit Money")
@@ -53,13 +48,12 @@ def main():
             account.check_balance()
         
         elif choice == '4':
-            print("\nExiting...!")
+            print("\nExited!")
             break
         
         else:
-            print("\nInvalid choice. Please try again.")
+            print("\nInvalid choice. try again.")
 
-# Run the application
 main()
 
 

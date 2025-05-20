@@ -425,7 +425,7 @@
 # # Print the loaded data
 # print("Deserialized Data:", loaded_data)
 
-import pickle
+# import pickle
 
 # cars = ["Audi", "BMW", "Maruti", "Suzuki"]
 
@@ -434,7 +434,7 @@ import pickle
 # pickle.dump(cars, fileobj)
 # fileobj.close()
 
-file= "car.pkl"
-fileobj = open(file,'rb')
-mycar = pickle.load(fileobj)
-print(mycar) 
+# file= "car.pkl"
+# fileobj = open(file,'rb')
+# mycar = pickle.load(fileobj)
+# print(mycar) 
