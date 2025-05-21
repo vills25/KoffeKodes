@@ -76,17 +76,16 @@
 # import random
 
 # def guessing_game():
-#     generatednum = random.randint(1, 100)
-#     n = int(input("Guess a number: "))
-    
-#     if n == generatednum:
-#         print("Correct", generatednum)
-#     else:
-#         if n <= generatednum:
-#            print("Too low")
-#         elif n >= generatednum:
-#             print("Too high")
-#         print("Incorrect.", generatednum)
+#     num = random.randint(1, 100)
+#     while True:
+#         guess = int(input("Guess number: "))
+#         if guess == num:
+#             print("Correct!")
+#             break
+#         elif guess < num:
+#             print("Too low!")
+#         else:
+#             print("Too high!")
 
 # guessing_game()
 
@@ -304,3 +303,104 @@
 #             print("Not empty")    
 # filename= input("Enter the filename: ")
 # emptyfile(filename)
+
+
+# Write a script to sort a list of tuples based on the second element.
+
+# def secondelement(tup):
+#     return sorted(tup , key = lambda x: x[1])
+
+# list = [(5,6),(1,2) , (3,4)]
+# print(secondelement(list))
+
+
+# Write a function to determine if two strings are anagrams of each other.
+
+# def anagrams(s1, s2):
+#     return sorted(s1) == sorted(s2)
+
+# print(anagrams("vishal", "shalvi"))
+
+
+# Create a function to find the GCD of two numbers without using built-in functions.
+
+# def gcd(x,y):
+#     while y:
+#         x, y =y, x%y
+#     return y
+    
+# print(gcd(55,25))
+        
+
+# Create a program to generate all permutations of a given string.
+
+# from itertools import permutations
+
+# def permutation(str):
+#     pm = permutations(str)
+#     for p in pm:
+#         print(''.join(p))
+# print(permutation("vishal"))        
+
+
+# Implement a program to check if a string is a valid IP address.
+
+# def ipaddres(ip):
+#     str = ip.split(".")
+#     if len(str) != 4:
+#         return False
+#     for part in str:
+#         if not part.isdigit():
+#             return False
+#         if int(part) > 255 or int(part) < 0:
+#             return False
+#     return True
+
+# ip = input("enter ip address: ")
+# if ipaddres(ip):
+#     print("valid ip address")
+# else:
+#     print("invalid ip address")
+
+
+# Implement a function that calculates the sum of digits of a number until the sum is a single digit.
+
+# def digit(num):
+#     while num > 9:
+#         num = sum(int(d) for d in str(num))
+#     return num
+
+# print(digit(2510))
+
+
+# Write a decorator to time the execution of a function.
+
+# import time
+# from functools import wraps
+
+# def time_decorator(func):
+#     @wraps(func)
+#     def wrapper(*args, **kwargs):
+#         start_time = time.time()
+#         result = func(*args, **kwargs)
+#         end_time = time.time()
+#         execution_time = end_time - start_time
+#         print(f"Function {func.__name__} executed in {execution_time} seconds")
+#         return result
+#     return wrapper
+
+# @time_decorator
+# def example_function():
+#     time.sleep(2)
+# example_function()
+    
+
+# Write a function to merge two files line by line into a third file.
+# def mergefile(output1, output2, output_file):
+#     with open(output1, 'r') as o1, open(output2, 'r') as o2, open(output_file, 'w') as fo:
+#         for line1, line2 in zip(o1, o2):
+#             fo.write(line1 + line2)
+#         fo.write(o1.read())
+#         fo.write(o2.read())
+
+# mergefile('output1.txt','output2.txt','output3.txt')
