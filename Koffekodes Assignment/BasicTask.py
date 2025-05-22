@@ -54,10 +54,6 @@
 #     return lists
 
 # print(nestedlist([[1, 2],0,0 ,[3, [4, 5, [6,7]]]]))
-       
-
-# Write a program to find all prime numbers in a given range.
-
 
 
 # Create a program to check if a given year is a leap year without using calendar.
@@ -404,3 +400,159 @@
 #         fo.write(o2.read())
 
 # mergefile('output1.txt','output2.txt','output3.txt')
+
+
+# Create a script that reads a CSV file and prints it in a tabular format.
+
+# from csv import DictWriter,DictReader
+# with open('example.csv', 'w',newline='') as f:
+#     dict_writer = DictWriter(f,fieldnames=['First_name','Lastname','Subject','age'])
+#     dict_writer.writeheader()
+#     dict_writer.writerow({
+#         'First_name':'Vishal',
+#         'Lastname': 'Sohaliya',
+#         'age':22})
+#     dict_writer.writerow({
+#         'First_name':'Rakshit',
+#         'Lastname': 'Dharaiya',
+#         'age':23})
+
+# with open('example.csv', 'r') as rf:
+#     with open('write_csv.csv', 'w') as wf:
+#         csv_reader = DictReader(rf)
+#         csv_writer = DictWriter(wf,fieldnames=['First_name','Lastname','age'])
+#         csv_writer.writeheader()
+#         for row in csv_reader:
+#             First_name, Lastname, age = row['First_name'],row['Lastname'], row['age']
+#             csv_writer.writerow({
+#                 'First_name': First_name,
+#                 'Lastname': Lastname,
+#                 'age': age,
+#             })
+        
+
+# Write a program to find all prime numbers in a given range.
+
+# start = int(input("Enter the starting range: "))
+# end = int(input("Enter the ending range: "))
+# for i in range(start, end+1):
+#     flag = 0
+#     for j in range(2, i):
+#         if (i % j == 0):
+#             flag = 1
+#             break
+#     if (flag == 0):
+#         print(i, end=' ')        
+
+
+# Implement a function to check if a number is an Armstrong number.
+
+# i  = int(input("Enter a number to chack for armstrong: "))
+# orig = i
+# sum = 0
+
+# while (i > 0):
+#     sum = sum +(i%10)*(i%10)*(i%10)
+#     i=i//10
+# if orig == sum:
+#     print("Number is Armstrong")
+# else:
+#     print("Numbe is not armstrong")        
+
+
+#Create a class for a queue using lists with methods for enqueue, dequeue, and checking if empty.
+
+# from collections import deque
+
+# dq = deque([10,20,30])
+# dq.appendleft(5)
+# dq.pop()
+# print(dq)
+
+############################################
+
+# class Queue():
+#     def __init__(self, items=None):
+#         self.queuelist = items if items is not None else []
+
+#     def enqueue(self, item):
+#         self.queuelist.append(item) # add element
+
+#     def is_empty(self):
+#         return len(self.queuelist) == 0
+
+#     def dequeue(self): 
+#         if not self.is_empty():
+#             return self.queuelist.pop(0) # 0 index thi remove
+#         else:
+#             return None 
+        
+# o1 = Queue()
+# o1.enqueue(10)
+# o1.enqueue(10)        
+# o1.enqueue(10) 
+# o1.is_empty
+# print(o1)       
+
+
+# Write a program to generate Pascal's triangle up to a given number of rows.
+
+def print_row_1(): # row 1
+    print("1", end="")
+
+def print_row_2(): # row 2
+    print("1 1", end="")  
+
+def print_row(row):
+    for i in row:
+        print(i, end=" ")
+
+def print_pascal_triangle(n):
+    previous_row = [1,1]
+    for i in range(1,n+1):
+        if (i == 1): # print 1st row
+            print_row_1()
+        elif(i == 2): #print second row
+            print_row_2()
+        else:
+            row = [0 for j in range(i)] 
+          # first and last element 1 print karvane ke liye.
+            row[0] = 1
+            row[i-1] = 1
+        
+            for  j in range(1, i-1): # upar na digits no sum karva mate
+                row[j] = previous_row[j] + previous_row[j-1]
+            print_row(row)
+            previous_row=row    
+        print()     
+
+n = 8
+print(print_pascal_triangle(n))        
+
+
+# Write a class to represent a 2D point and implement methods for calculating distance from another point.
+
+# import math
+
+# class calculating_distance_another_point:
+#     def __init__(self, x, y):
+#         self.x = x
+#         self.y = y
+
+#     def calculate_distance(self, other_point):
+#         dis_x = self.x - other_point.x
+#         dis_y = self.y - other_point.y
+
+#         return math.sqrt(dis_x**2 + dis_y**2)
+
+# o1 = calculating_distance_another_point(2, 9)
+# o2 = calculating_distance_another_point(13, 24)
+
+# print(o1.calculate_distance(o2))  
+# print(o1)
+
+                                                
+                 
+        
+
+        

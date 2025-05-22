@@ -2,14 +2,14 @@
 
 -- Create a program to count the frequency of each character in a given string.
 
-Implement a function to check if a number is an Armstrong number.
+-- Implement a function to check if a number is an Armstrong number.
 
 -- Write a program to merge two dictionaries and add values of common keys.
 
 -- Create a function to flatten a nested list.
    Example: [[1, 2], [3, [4, 5]]] -> [1, 2, 3, 4, 5]
 
-Write a program to find all prime numbers in a given range.
+-- Write a program to find all prime numbers in a given range.
 
 -- Create a program to check if a given year is a leap year without using calendar.
 
@@ -25,7 +25,7 @@ Write a program to find all prime numbers in a given range.
 
 -- Create a function to find the GCD of two numbers without using built-in functions.
 
-Write a program to generate Pascal's triangle up to a given number of rows.
+-- Write a program to generate Pascal's triangle up to a given number of rows.
 
 -- Implement a function that calculates the sum of digits of a number until the sum is a single digit.
 
@@ -37,7 +37,7 @@ Write a program to generate Pascal's triangle up to a given number of rows.
 
 -- Implement a program to check if a file is empty.
 
-Create a script that reads a CSV file and prints it in a tabular format.
+-- Create a script that reads a CSV file and prints it in a tabular format.
 
 -- Create a class for a bank account with deposit, withdraw, and check balance methods.
 
@@ -45,7 +45,7 @@ Write a class to represent a 2D point and implement methods for calculating dist
 
 -- Implement a class hierarchy for shapes (e.g., Circle, Rectangle) with area and perimeter methods.
 
-Create a class for a queue using lists with methods for enqueue, dequeue, and checking if empty.
+-- Create a class for a queue using lists with methods for enqueue, dequeue, and checking if empty.
 
 -- Write a class that implements a basic calculator supporting add, subtract, multiply, and divide operations.
 
@@ -58,6 +58,7 @@ Create a class for a queue using lists with methods for enqueue, dequeue, and ch
 -- Implement a program to check if a string is a valid IP address.
 
 -- Create a program to generate all permutations of a given string.
+
 
 
 
