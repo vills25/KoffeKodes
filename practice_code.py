@@ -254,10 +254,10 @@
 #print('Is "u" in B?', 'u' in B)
 
 # Given a list of numbers with duplicates, write a program to:
-#tdata=[1,2,2,3,3,4,4,5,5,6,2,1,5,2]
+# listdata=[1,2,2,3,3,4,4,5,5,6,2,1,5,2]
 # Convert the list into a set to remove duplicates.
-#setdata = set(listdata)
-#print("Set data:", setdata)
+# setdata = set(listdata)
+# print("Set data:", setdata)
 # Add a new number to the set.
 #setdata.add(100)
 # Print the updated set.
@@ -438,3 +438,239 @@
 # fileobj = open(file,'rb')
 # mycar = pickle.load(fileobj)
 # print(mycar) 
+
+
+# list1= ["a", "b",["c",["d","e",["f","g"],"k"],"l"],"m","n"]
+# sublist=["h","i","j"]
+# list1[2][1][2].extend(sublist)
+# print(list1)
+# Output = ['a', 'b', ['c', ['d', 'e', ['f', 'g', 'h', 'i', 'j'], 'k'], 'l'], 'm', 'n']
+
+# a = 10
+# b= 20
+
+# a,b = b,a
+
+# print(a)
+# print(b)
+
+# list1= ["hello", "python"]
+# list2= ["world","react"]
+# list3 = [x+y for x in list1 for y in list2]
+# print(list3)
+
+# def merge_tuple(tuple1, tuple2):
+#     combined = []
+#     for item in tuple1:
+#         if item not in combined:
+#             combined.append(item)
+#     for item in tuple2:
+#         if item not in combined:
+#             combined.append(item)
+#     return tuple(combined)
+
+# tuple1 = (1, 2, 3, 4, 5, 6, 7)
+# tuple2 = (4, 5, 6, 7, 8, 9, 10)
+# combined_tuple = merge_tuple(tuple1, tuple2)
+# print("Combined Tuple (without duplicates):", combined_tuple)
+
+
+# def tuplelist(names, ages):
+#     paired = []
+#     for i in range(len(names)):
+#         paired.append((names[i], ages[i]))
+#     return paired
+
+# names = ('vishal', 'rakshit', 'viraj')
+# ages = (22, 23, 26)
+# name_age = tuplelist(names, ages)
+# print("Name-Age List:", name_age)
+
+
+# nested_student_dict = {
+#     "class": {
+#         "student": {
+#             "name": "Mike",
+#             "marks": {
+#                 "physics": 70,
+#                 "history": 80
+#             }
+#         }
+#     }
+# }
+
+# nested_student_dict["class"]["student"]["name"] = "jay"
+# print(nested_student_dict)
+
+#print same values in diffrent keys
+# employees = ['Kelly', 'Emma']
+# defaults = {"designation": 'Developer', "salary": 8000}
+# pairs=  dict.fromkeys(employees,defaults)  
+# print(pairs)
+
+# get name and salary only
+# sample_dict = {
+#     "name": "Kelly",
+#     "age": 25,
+#     "salary": 8000,
+#     "city": "New york"}
+
+# keys = ["name", "salary"]
+# new_dict = {k: sample_dict[k] for k in keys}
+# print(new_dict)
+
+
+#remove name and salary
+# dicts = {
+#     "name": "jay",
+#     "age" : 21,
+#     "salary": 5200,
+#     "city": "Surat" 
+# } 
+# keys = ["name", "salary"] 
+
+# for key in keys:
+#     dicts.pop(key)
+# print(dicts)    
+
+# output = {'age': 21, 'city': 'Surat'}                                            
+
+# checks if values exists in ?
+# dicts = {
+#     "name" : "jay",
+#     "age" : 21,
+#     "salary" : 5200,
+#     "City": "Surat"
+# }
+
+# if 5200 in dicts.values():
+#     print("value exist")
+# else: 
+#     print("value dosen't exist")    
+
+# change the Key
+# dicts = {
+#     "name" : "jay",
+#     "age" : 21,
+#     "salary" : 5200,
+#     "City": "Surat"
+# }
+# dicts["Location"] = dicts.pop("City")
+# print(dicts)
+
+# dicts = {
+#     "name" : "jay",
+#     "age" : 21,
+#     "salary" : 5200,
+#     "City": "Surat"
+# }
+# dicts = {
+#     "name" : "jay",
+#     "age" : 21,
+#     "salary" : 5200,
+#     "City": "Surat"
+# }# dicts = {
+#     "name" : "jay",
+#     "age" : 21,
+#     "salary" : 5200,
+#     "City": "Surat"
+# }
+
+
+# change value of key
+# sample_dict = {
+#     'emp1': {'name': 'Jhon', 'salary': 7500},
+#     'emp2': {'name': 'Emma', 'salary': 8000},
+#     'emp3': {'name': 'Brad', 'salary': 6000}
+# }
+
+# sample_dict["emp1"]["salary"] = 8500
+# print(sample_dict)
+
+# original_dicts = {"a": 1, "b":2, "c":3}
+# swapped_dict = {values:key for key, values in original_dicts.items()}
+# print(swapped_dict)
+
+# HCF LCM
+# def find_hcf(a,b):
+#     while b:
+#         a,b = b , a%b
+#     return a
+
+# a =48
+# b =18
+
+# hcf = find_hcf(a,b)
+# lcm = (a*b) // hcf 
+
+# print("HCM ",hcf)    
+# print("LCM ",lcm)  
+
+
+# c= float(int(input("Enter temperature in celcious ")))
+# f = (c * 9/5) + 32
+
+# print(f"{c}°C is equal to {f:.2f}°F")
+
+# f = float(int(input("Enter temperature in fahrenhit: ")))
+# c = (f-32) * 5/9
+# print(f"{f:.2f}°F is equal to {c}°C")
+
+
+# nested for loop
+# employees = [("Dorothy", "DevOps"), ("Abdel", "HR"), ("Nataliya", "DevOps")]
+# departments = [
+#     {"name": "DevOps", "city": "Berlin"},
+#     {"name": "HR", "city": "Abuja"},
+# ]
+
+# for name, department in employees:
+#     for dept in departments:
+#         if dept["name"] == department:
+#             print(f"{name} works in {dept['city']}")
+
+
+# resource_donetors = [
+#     [6, 2, 7],
+#     [9, 3, 5],
+#     [4, 1, 8]
+# ]       
+
+# total_resources = 0
+# for planet in resource_donetors:
+#     for resource in planet:
+#         total_resources += resource
+# print("Answer",total_resources)
+
+# resource_vs = ["vishal", "viraj","rakshit","akash"]
+
+# for i in resource_vs:
+#     for y in resource_vs:
+#         print(f"{i} vs {y}") 
+
+# num = "Hello"
+# results = isinstance(num, int)
+
+# if results:
+#     print("yes")
+# else:
+#     print("No")
+
+# main_list = ['Emma', 'Stevan', 12, 45.6, 1 + 2j, "Eric", ]
+# sub_list1 = []
+# sub_list2 = []
+
+# for item in main_list:
+#     if isinstance(item,(int,float,complex)):
+#         sub_list1.append(item)
+#     elif isinstance(item,str):
+#         sub_list2.append(item)
+        
+# print(sub_list1)
+# print(sub_list2)
+
+
+
+
+
+

@@ -14,8 +14,8 @@ def merge_tuple(tuple1, tuple2):
 
 tuple1 = (1, 2, 3, 4, 5, 6, 7)
 tuple2 = (4, 5, 6, 7, 8, 9, 10)
-combined_tuple = merge_tuple(tuple1, tuple2)
-print(combined_tuple)
+combined_tuple = merge_tuple(tuple1, tuple2)   
+print(combined_tuple)    
 
 # Create a tuple of your favorite movies, and then write code to print the first two movies and the last two movies in the tuple.
 
@@ -59,14 +59,3 @@ name = ('vishal', 'rakshit', 'viraj')
 age = (22, 23,26)  
 name_age= tuplelist(name,age)
 print(name_age)
-
-
-
-     
-
-
-
-
-
-
-
