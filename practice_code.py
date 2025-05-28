@@ -669,8 +669,15 @@
 # print(sub_list1)
 # print(sub_list2)
 
+# even_num = 5
+# if even_num % 2 == 0:
+#     print("Even number")
+# else:
+#     print("Odd number")
 
+# str = "My salary is 7000"
+# print(str.isalnum())
 
-
-
-
+# set_ex = {1,"orange", "blue"}
+# for orange in set_ex:
+#     print(orange)
