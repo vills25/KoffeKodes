@@ -13,16 +13,13 @@ class Cart():
             if product_name:
                 self.products[product_name]['product_name'] = product_name
             if quantity:
-                self.products[product_name]['quantity'] = quantity
-                
+                self.products[product_name]['quantity'] = quantity                
             else:
                 print("Product not in cart")
-
 
     def delete_product(self, product_id):
         if product_id in self.products:
             del self.products[product_id]
-            
         else:
             print("Product not found")
 
@@ -75,9 +72,9 @@ def main():
 
         elif choice == "5":
             product_id = input("Enter product id: ")
-            product = cart.get_product(product_id)
-            if product:
-                print(f"Product Name: {product['Product Name']}, Quantity: {product['Quantity']}")
+            products = cart.get_product(product_id)
+            if products:
+                print(f"Product Name: {products["Product name"]}, Quantity: {products["Quantity"]}")
             else:
                 print("Product not found in cart.")
 
