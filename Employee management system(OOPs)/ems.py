@@ -29,7 +29,7 @@ class Manager(Employee):
         self.team_size = team_size
         self.project = project
 
-    # Overriding display details method
+    # Overriding display details method # Recursion
     def display_details(self):
         base_details = super().display_details()
         return f"{base_details}, Team Size: {self.team_size}, Project: {self.project}"
@@ -53,7 +53,7 @@ def load_from_file(filename="employee_data.txt"):
         return
     print("\n Loaded Data from File:")
     with open(filename, "r") as file:
-        for line in file:
+        for line in file:                 
             print(line.strip())
 
 # Main Execution

@@ -61,7 +61,6 @@ def dicts():
             break
 dicts()
 
-
 # Write a function that takes two dictionaries as input and returns a new dictionary containing key-value pairs that exist in both input dictionaries.
 def dicts(dict1, dict2):
     return {key: value for key, value in dict1.items() if key in dict2 and dict2[key] == value}

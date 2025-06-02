@@ -11,9 +11,9 @@ class Cart():
     def edit_product(self, product_id, product_name = None, quantity= None):
         if product_id in self.products:
             if product_name:
-                self.products[product_name]['product_name'] = product_name
+                self.products["product_name"] = product_name
             if quantity:
-                self.products[product_name]['quantity'] = quantity                
+                self.products["quantity"] = quantity                
             else:
                 print("Product not in cart")
 
@@ -24,7 +24,6 @@ class Cart():
             print("Product not found")
 
     def view_cart(self):
-        print(self.products)
         for product_id, product in self.products.items():
             print(f"Product name: {product['Product name']}, Product ID: {product_id}, Quantity: {product['Quantity']}")
 
@@ -50,7 +49,7 @@ def main():
         if choice == "1":
             product_id = input("enter Product ID: ")
             product_name = input("Enter Product Name: ")
-            quantity = input("enter Product Quantity: ")
+            quantity = int(input("enter Product Quantity: "))
             cart.add_product(product_id, product_name, quantity)
             print("Item added")
 
@@ -67,9 +66,9 @@ def main():
             print("item deleted")
 
         elif choice == "4":
-            cart.view_cart()
             print("Product fatched")
-
+            cart.view_cart()
+            
         elif choice == "5":
             product_id = input("Enter product id: ")
             products = cart.get_product(product_id)
