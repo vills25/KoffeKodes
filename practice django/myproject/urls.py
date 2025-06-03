@@ -16,10 +16,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from myapp.views import *
+from vege.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    #base
     path('', include('myapp.urls')),
-    # path('vege/', include('vege.urls')),
+    path('contact/', contact, name = "contact"),
+    path('about/', about, name="about"),
+    path('index/', index, name="index"),
+    path('success-page/', success_page, name="Success_page"),
+    #vege app Urls
+    path('receipes/', receipes, name="receipes"),
 ]
 

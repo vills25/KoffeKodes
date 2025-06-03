@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Page</title>
+    <style>
+      h1 {
+        font-family: "Lucida Sans";
+        color: #c83030;
+      }
+    </style>
+  </head>
+  <body>
+    {% block start %}
+    <h1>This is Home Page in base file outside of home folder</h1>
+    {% endblock %}
+
+    <script>
+      console.console.log("Hey Django");
+    </script>
+  </body>
+</html>

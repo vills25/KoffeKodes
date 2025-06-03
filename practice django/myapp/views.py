@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
 def home(request):
-    context = [{
+    contact = [{
         'name': 'Vishal',
         'age': 17},
         {
@@ -18,4 +18,17 @@ def home(request):
     }
         
         ]
-    return render(request, 'home.html', context = {'context' : context})
+    return render(request, 'base.html', context = {'context' : contact})
+
+
+def contact(request):
+    return render(request, 'home/contact.html')
+
+def about(request):
+    return render(request, 'home/about.html')    
+
+def index(request):
+    return render(request, 'home/index.html')
+
+def success_page(request):
+    return render(request, 'home/success_page.html')
