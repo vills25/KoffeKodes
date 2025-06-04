@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import *
+from django.http import HttpResponse
 # Create your views here.
 
 def receipes(request):
@@ -21,3 +22,4 @@ def receipes(request):
             receipe_description=receipe_description)
 
         return render(request, 'receipes.html')
+    return render(request, 'receipes.html')
