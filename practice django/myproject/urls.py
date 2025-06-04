@@ -32,7 +32,8 @@ urlpatterns = [
     path('success-page/', success_page, name="Success_page"),
     #vege app Urls
     path('receipes/', receipes, name="receipes"),
-    path("delete-receipe/<id>/", delete_receipes, name="delete_receipes")
+    path('delete-receipe/<id>/', delete_receipes, name="delete_receipes"),
+    path('update-receipe/<id>/', update_receipe, name="update_receipe")
 ]
 
 if settings.DEBUG:
