@@ -22,13 +22,17 @@ def home(request):
 
 
 def contact(request):
-    return render(request, 'home/contact.html')
+    context = {'page' : 'About'}
+    return render(request, 'home/contact.html', context)
 
 def about(request):
-    return render(request, 'home/about.html')    
+    context = {'page' : 'About'}
+    return render(request, 'home/about.html', context)    
 
 def index(request):
-    return render(request, 'home/index.html')
+    context = {'page' : 'About'}
+    return render(request, 'home/index.html', context)
 
 def success_page(request):
-    return render(request, 'home/success_page.html')
+    context = {'page' : 'About'}
+    return render(request, 'home/success_page.html', context)
