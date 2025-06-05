@@ -14,6 +14,7 @@ def tweet_list(request):
 
 #Create Tweets
 def tweet_create(request):
+    #when user sending data
     if request.method == 'POST':
         form = TweetForm(request.POST, request.FILES)
         if form.is_valid():
@@ -22,8 +23,31 @@ def tweet_create(request):
             tweet.save()
             return redirect('tweet_list')
         else:
+            #sending form to user
             form = TweetForm()
         return render(request, 'tweet_form.html', {'form': form})
+    
+#Edit Tweet
+def tweet_edit(request,tweet_id):
+    #To ensure tweet can be edits by the valid user only
+    tweet = get_object_or_404(Tweet, pk = tweet_id, user = request.user)
+    if request.method == 'POST':
+      form = TweetForm(request.POST, request.FILES, isinstance=tweet)
+      if form.is_valid():
+          tweet.user = request.user
+          tweet.save()
+          return redirect('tweet_list')
+    else:
+        form = TweetForm(isinstance=tweet)
+    return render(request, 'tweet_form.html', {'form': form})
+        
+#Delete tweet
+def tweet_delete(request, tweet_id):
+    tweet = get_object_or_404(Tweet, pk=tweet_id, user = request.user)
+    if request.method == 'POST':
+        tweet.delete()
+        return redirect('tweet_list')
+    return render(request, 'tweet_confirm_delete.html', {'tweet': tweet})
     
            
     
