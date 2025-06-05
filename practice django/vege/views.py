@@ -39,7 +39,7 @@ def update_receipe(request,id):
 
         queryset.receipe_name = receipe_name
         queryset.receipe_description = receipe_description
-
+    
         if receipe_image:
             queryset.receipe_image = receipe_image
         queryset.save()
