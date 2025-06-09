@@ -12,7 +12,7 @@ def tweet_list(request):
     tweets = Tweet.objects.all().order_by('-created_at')
     return render(request, 'tweet_list.html', {'tweets':tweets})
 
-#Create Tweets
+# #Create Tweets
 def tweet_create(request):
     #when user sending data
     if request.method == 'POST':
@@ -22,11 +22,25 @@ def tweet_create(request):
             tweet.user = request.user
             tweet.save()
             return redirect('tweet_list')
-        else:
-            #sending form to user
-            form = TweetForm()
-        return render(request, 'tweet_form.html', {'form': form})
+    else:
+        #sending form to user
+        form = TweetForm()
+    return render(request, 'tweet_form.html', {'form': form})
     
+# def tweet_create(request):
+#     if request.method == 'POST':
+#         form = TweetForm(request.POST, request.FILES)
+#         if form.is_valid():
+#             tweet = form.save(commit=False)
+#             tweet.user = request.user
+#             tweet.save()
+#             return redirect('tweet_list')
+#     else:
+#         form = TweetForm()
+
+#     return render(request, 'tweet_form.html', {'form': form})
+
+
 #Edit Tweet
 def tweet_edit(request,tweet_id):
     #To ensure tweet can be edits by the valid user only

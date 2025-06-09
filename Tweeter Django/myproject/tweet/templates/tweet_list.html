@@ -1,0 +1,45 @@
+<!-- {% extends "layout.html" %} {% block title %} Chai and tweet {% endblock %} {%
+block content %}
+<h1 class="text-center">Welcome to Tweet List page</h1>
+<a class="btn btn-primary mb-3" href="{% url 'tweet_create' %}"
+  >Create Tweet
+</a>
+
+<div class="container row gap-3">
+  {% for tweet in tweets %}
+  <div class="card" style="width: 18rem">
+    <img src="{{ tweet.photo.url }}" class="card-img-top" alt="tweet image" />
+    <div class="card-body">
+      <h5 class="card-title">{{ tweet.user.username }}</h5>
+      <p class="card-text">{{ tweet.text }}</p>
+      <a href="{% url 'tweet_edit' tweet.id %}" class="btn btn-primary">Edit</a>
+      <a href="{% url 'tweet_delete' tweet.id %}" class="btn btn-danger"
+        >Delete</a
+      >
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}
+ -->
+
+{% extends "layout.html" %} {% block title %} TweetList {% endblock %} {% block
+content %}
+<h1 class="text-center">Welcome to Tweet List page</h1>
+<a class="btn btn-primary mb-3" href="{% url 'tweet_create' %}">Create Tweet</a>
+
+<div class="container row gap-3">
+  {% for tweet in tweets %}
+  <div class="card" style="width: 18rem">
+    <div class="card-body">
+      <h5 class="card-title">{{ tweet.user.username }}</h5>
+      <p class="card-text">{{ tweet.text }}</p>
+      <a href="{% url 'tweet_edit' tweet.id %}" class="btn btn-primary">Edit</a>
+      <a href="{% url 'tweet_delete' tweet.id %}" class="btn btn-danger"
+        >Delete</a
+      >
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}
