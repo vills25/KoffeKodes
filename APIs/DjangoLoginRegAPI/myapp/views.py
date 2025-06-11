@@ -10,7 +10,7 @@ from rest_framework_simplejwt.tokens import RefreshToken
 
 class RegisterView(generics.CreateAPIView):
     queryset = User.objects.all()
-    permission_classes = (AllowAny,)
+    permission_classes = (AllowAny)
     serializer_class = RegisterSerializer
 
 class LoginView(generics.GenericAPIView):
