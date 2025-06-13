@@ -18,10 +18,9 @@ class RegisterSerializer(serializers.ModelSerializer):
             validted_data['password']
         )
         return user
-       
+
+
 class LoginSerializer(serializers.Serializer):
     username = serializers.CharField(required = True)
     password = serializers.CharField(required = True)  
 
-
-    

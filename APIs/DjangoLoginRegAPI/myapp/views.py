@@ -28,7 +28,8 @@ class LoginView(generics.GenericAPIView):
                 'user' : user_serializer.data
             })
         else:
-            return Response({'detail' : 'Invaalid credentials'}, status = 401)
+            return Response({'detail' : 'Invalid credentials'}, 401)
+
 
 class DashboardView(APIView):
     permission_classes = (IsAuthenticated,) # to ensure that only authenticated users can access this Dashboard.
