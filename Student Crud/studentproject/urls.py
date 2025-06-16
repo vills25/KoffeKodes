@@ -1,5 +1,5 @@
 """
-URL configuration for myproject project.
+URL configuration for studentproject project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.2/topics/http/urls/
@@ -14,28 +14,14 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.conf import settings
 from django.contrib import admin
 from django.urls import path, include
-from myapp.views import *
-from django.conf.urls.static import static
-from vege.views import *
-from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+
+from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    #base
-    # path('', include('myapp.urls')),
-    # path('contact/', contact, name = "contact"),
-    # path('about/', about, name="about"),
-    # path('index/', index, name="index"),
-    # path('success-page/', success_page, name="Success_page"),
-    #vege app Urls
-    path('', include('vege.urls')),
-   
+    path('api/', include('student_app.urls')),
+    path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
 ]
-
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-
-urlpatterns += staticfiles_urlpatterns()    
