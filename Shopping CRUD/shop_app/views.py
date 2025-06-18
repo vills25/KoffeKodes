@@ -1,7 +1,9 @@
 from rest_framework import viewsets
-from .models import Product, Category
-from .serializers import ProductSerializer
-from rest_framework.permissions import IsAuthenticatedOrReadOnly, BasePermission
+from .models import Product, Category, Cart
+from .serializers import ProductSerializer, CartSerializer
+from rest_framework.permissions import IsAuthenticatedOrReadOnly, BasePermission, IsAuthenticated
+from rest_framework.response import Response
+from rest_framework.throttling import ScopedRateThrottle
 
 class IsVendorOrReadOnly(BasePermission):
     def permission(self, request, obj): # Check if the user is the vendor and has permission to edit/delete the product
@@ -26,4 +28,14 @@ class CategoryViewSet(viewsets.ModelViewSet):
     serializer_class = ProductSerializer
     permission_classes = [IsAuthenticatedOrReadOnly]
 
+class CartViewSet(viewsets.ModelViewSet):
+    queryset = Cart.objects.all()
+    serializer_class = CartSerializer
+    permission_classes = [IsAuthenticated]
+
+    def get_queryset(self):
+        return Cart.objects.filter(user=self.request.user)
+
+    def perform_create(self, serializer):
+        serializer.save(user=self.request.user)    
 
