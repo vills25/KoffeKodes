@@ -39,3 +39,7 @@ class CartViewSet(viewsets.ModelViewSet):
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)    
 
+# import requests
+# response = requests.get('https://fakestoreapi.com/products')
+# print(response.json())
+
