@@ -7,8 +7,8 @@ from rest_framework.throttling import ScopedRateThrottle
 
 class IsVendorOrReadOnly(BasePermission):
     def permission(self, request, obj): # Check if the user is the vendor and has permission to edit/delete the product
-        if request.method in ['GET']:# Allow read-only access for all users and restrict write access to vendors only
-            return True 
+        if request.method in ['GET']: # Allow read-only access for all users and restrict write access to vendors only
+            return True
         return obj.vendor == request.user # Allow write access only to the vendor of the product
 
 class ProductViewSet(viewsets.ModelViewSet): # CRUD operations, filtering, searching, and throttling, 
@@ -35,11 +35,8 @@ class CartViewSet(viewsets.ModelViewSet):
 
     def get_queryset(self):
         return Cart.objects.filter(user=self.request.user)
-
+    
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)    
 
-# import requests
-# response = requests.get('https://fakestoreapi.com/products')
-# print(response.json())
 
