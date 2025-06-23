@@ -32,10 +32,10 @@ class Patient(models.Model):
 # python manage.py shell
 
 # from myapp.models import Doctor,ReportType, Patient
-# >>> a = ReportType.objects.create(name='Fever', report_charge='200')
+# >>> ReportType.objects.create(name='Fever', report_charge='200')
 # >>> a.save()
 
-# a is queryset which is getting data from database, with options, Get, filter, all, delete
+# using queryset getting data from database, with options, Get, filter, all, delete
 # To get data in decending put ' - ' before the key name, ex. -report_charge
 
 #  >>> ReportType.objects.all()     
@@ -44,3 +44,6 @@ class Patient(models.Model):
 # >>> ReportType.objects.get(pk = 1)
 # <ReportType: Malaria>
 
+ # values_list() returns only column lists ppf table
+
+ 
