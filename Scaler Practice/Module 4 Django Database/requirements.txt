@@ -1,6 +1,8 @@
 asgiref==3.8.1
-Django==4.1
+# Django==5.2.3
+Django == 4.2.0
+djangorestframework==3.16.0
 mysqlclient==2.2.7
 sqlparse==0.5.3
 tzdata==2025.2
-# Django==5.2.3 uninstalled
+
