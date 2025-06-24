@@ -13,7 +13,7 @@ def item_list(request):
 
     data = {
         'result':serializer.data
-    }
+    }       
 
     return Response({'status':'success','message':'data fetched successfully ',"data":data},status=200)
 
