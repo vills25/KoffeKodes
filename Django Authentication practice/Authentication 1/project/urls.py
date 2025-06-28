@@ -1,5 +1,5 @@
 """
-URL configuration for myproject project.
+URL configuration for project project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.2/topics/http/urls/
@@ -16,14 +16,17 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from myapp.views import RegisterView, LoginView, DashboardView
+from my_app.views import CustomerRegisterView, CustomerLoginView, DashboardView, UserDetailsView
 from rest_framework_simplejwt.views import (TokenObtainPairView,TokenRefreshView)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/token/', TokenObtainPairView.as_view()),
-    path('api/token/refresh/', TokenRefreshView.as_view()),
-    path('api/auth/register/', RegisterView.as_view()),
-    path('api/auth/login/', LoginView.as_view()),
-    path('api/dashboard/', DashboardView.as_view())
+    path('register/', CustomerRegisterView.as_view()),
+    path('login/', CustomerLoginView.as_view()),
+    path('dashboard/', DashboardView.as_view()),
+    path('users/', UserDetailsView.as_view()),
+    path('token/', TokenObtainPairView.as_view()),
+    path('token/refresh/', TokenRefreshView.as_view()),
+
 ]
+

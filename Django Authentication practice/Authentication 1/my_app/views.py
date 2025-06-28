@@ -1,18 +1,23 @@
-from rest_framework import generics
+from rest_framework.generics import CreateAPIView, GenericAPIView, ListAPIView
 from rest_framework.response import Response
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.views import APIView
+from django.contrib.auth import authenticate
 from django.contrib.auth.models import User
 from .serializers import RegisterSerializer, LoginSerializer, UserSerializer
-from django.contrib.auth import authenticate
 from rest_framework_simplejwt.tokens import RefreshToken
 
-class RegisterView(generics.CreateAPIView): 
+class UserDetailsView(ListAPIView):
+    queryset = User.objects.all()
+    permission_classes = (IsAuthenticated,)
+    serializer_class = UserSerializer
+
+class CustomerRegisterView(CreateAPIView): 
     queryset = User.objects.all() 
-    permission_classes = (AllowAny,) # anyone can register, # this is a comma separated Tuple # we can also define This is in list[]
+    permission_classes = (AllowAny,)
     serializer_class = RegisterSerializer
 
-class LoginView(generics.GenericAPIView):
+class CustomerLoginView(GenericAPIView):
     serializer_class = LoginSerializer
 
     def post(self, request): 
@@ -22,19 +27,14 @@ class LoginView(generics.GenericAPIView):
         if user is not None:
             refresh = RefreshToken.for_user(user)
             user_serializer = UserSerializer(user)
-            return Response({
-                'refresh' : str(refresh),
-                'access' : str(refresh.access_token),
-                'user' : user_serializer.data
-            })
+            return Response({'refresh' : str(refresh),'access' : str(refresh.access_token),'user' : user_serializer.data})
         else:
             return Response({'detail' : 'Invalid credentials'}, 401)
 
 class DashboardView(APIView):
-    permission_classes = (IsAuthenticated,) # to ensure that only authenticated users can access this Dashboard.
-                       # (IsAuthenticatedOrReadOnly)	Auth users = full access, guests = read-only
+    permission_classes = (IsAuthenticated,) 
     def get(self, request):     
         user = request.user
         user_serializer = UserSerializer(user)
         return Response({'message' : 'Welcome to the dashboard', 'user' : user_serializer.data}, 200)
-    
+

@@ -51,7 +51,7 @@ def item_update(request):
         item = Item.objects.get(id=pk)
     except Item.DoesNotExist:
         return Response({'error': 'Item not found'},status= 404)
-    
+
     serializer = ItemSerializer(item, data=request.data)
     if serializer.is_valid():
         serializer.save()
